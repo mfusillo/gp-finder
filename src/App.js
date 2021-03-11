@@ -1,9 +1,9 @@
 import React from "react";
-import { Map } from "./Map";
+import { MapDisplay } from "./MapDisplay";
 import "./App.css";
 
 export const App = () => {
-  return <Map></Map>;
+  return <MapDisplay></MapDisplay>;
 };
 
 export default App;
