@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = "ec9f89e4efe3473d6c48f999555798c9";
 
 export const getUserLocality = (position) =>
   axios.get(
