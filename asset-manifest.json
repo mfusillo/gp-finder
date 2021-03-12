@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/gp-finder/static/css/main.8c76b4f6.chunk.css",
+    "main.js": "/gp-finder/static/js/main.cbc5d84d.chunk.js",
+    "main.js.map": "/gp-finder/static/js/main.cbc5d84d.chunk.js.map",
+    "runtime-main.js": "/gp-finder/static/js/runtime-main.53bf931f.js",
+    "runtime-main.js.map": "/gp-finder/static/js/runtime-main.53bf931f.js.map",
+    "static/js/2.495ddcc3.chunk.js": "/gp-finder/static/js/2.495ddcc3.chunk.js",
+    "static/js/2.495ddcc3.chunk.js.map": "/gp-finder/static/js/2.495ddcc3.chunk.js.map",
+    "static/js/3.571e82fb.chunk.js": "/gp-finder/static/js/3.571e82fb.chunk.js",
+    "static/js/3.571e82fb.chunk.js.map": "/gp-finder/static/js/3.571e82fb.chunk.js.map",
+    "index.html": "/gp-finder/index.html",
+    "static/css/main.8c76b4f6.chunk.css.map": "/gp-finder/static/css/main.8c76b4f6.chunk.css.map",
+    "static/js/2.495ddcc3.chunk.js.LICENSE.txt": "/gp-finder/static/js/2.495ddcc3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53bf931f.js",
+    "static/js/2.495ddcc3.chunk.js",
+    "static/css/main.8c76b4f6.chunk.css",
+    "static/js/main.cbc5d84d.chunk.js"
+  ]
+}
