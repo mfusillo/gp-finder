@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Marker, Popup, useMapEvents } from "react-leaflet";
 
-export const LocationMarker = (props) => {
+export const UserPositionMarker = (props) => {
   const { position, setPosition } = props;
   const map = useMapEvents({
     locationfound(e) {
@@ -15,10 +15,11 @@ export const LocationMarker = (props) => {
       map.locate();
     }
   }, []);
+
   return position === null ? null : (
     <Marker position={position}>
       <Popup>You are here</Popup>
     </Marker>
   );
 };
-export default LocationMarker;
+export default UserPositionMarker;
