@@ -1,0 +1,12 @@
+label {
+  display: block;
+  margin: 10px;
+}
+
+.text-input {
+  margin-left: 10px;
+}
+
+.form-container {
+  text-align: center;
+}

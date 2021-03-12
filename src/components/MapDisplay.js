@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
 import UserPositionMarker from "./UserPositionMarker";
 import { getUserLocality, getDoctorsLocations } from "../services/http.service";
+import AppointmentForm from "./AppointmentForm";
 
 export const MapDisplay = () => {
   const [userPosition, setUserPosition] = useState(null);
   const [userLocality, setUserLocality] = useState(null);
   const [doctorsPositions, setDoctorsPositions] = useState([]);
-
-  console.log(userPosition);
+  const [appointmentsList, setAppointmentsList] = useState([]);
 
   useEffect(() => {
     if (userPosition) {
@@ -49,10 +49,11 @@ export const MapDisplay = () => {
             position={[doctorsPosition.latitude, doctorsPosition.longitude]}
           >
             <Popup>
-              <div>
-                <h1>{doctorsPosition.label}</h1>
-                <p>{doctorsPosition.label}</p>
-              </div>
+              <AppointmentForm
+                appointmentsList={appointmentsList}
+                setAppointmentsList={setAppointmentsList}
+                doctorsPosition={doctorsPosition}
+              />
             </Popup>
           </Marker>
         ))}
