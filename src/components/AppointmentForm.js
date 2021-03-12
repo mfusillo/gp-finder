@@ -8,6 +8,7 @@ export const AppointmentForm = ({
   setAppointmentsList,
 }) => {
   const [appointmentDetails, setAppointmentDetails] = useState({
+    label: doctorsPosition.label,
     name: "",
     email: "",
     datetime: "",

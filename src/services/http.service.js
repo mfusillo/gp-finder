@@ -6,7 +6,7 @@ export const getUserLocality = (position) =>
     `http://api.positionstack.com/v1/reverse?access_key=${API_KEY}&query=${position.lat},${position.lng}`
   );
 
-export const getDoctorsLocations = (userLocality) =>
+export const getDoctorsPosition = (userLocality) =>
   axios.get(
     `http://api.positionstack.com/v1/forward?access_key=${API_KEY}&query=medical&region=${userLocality}&limit=20`
   );

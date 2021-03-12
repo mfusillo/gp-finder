@@ -1,37 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
 import UserPositionMarker from "./UserPositionMarker";
-import { getUserLocality, getDoctorsLocations } from "../services/http.service";
 import AppointmentForm from "./AppointmentForm";
 
-export const MapDisplay = () => {
-  const [userPosition, setUserPosition] = useState(null);
-  const [userLocality, setUserLocality] = useState(null);
-  const [doctorsPositions, setDoctorsPositions] = useState([]);
-  const [appointmentsList, setAppointmentsList] = useState([]);
-
-  useEffect(() => {
-    if (userPosition) {
-      getUserLocality(userPosition)
-        .then((res) => setUserLocality(res.data.data[0].locality))
-        .catch((error) => console.log(error));
-    }
-  }, [userPosition]);
-
-  useEffect(() => {
-    if (userLocality) {
-      getDoctorsLocations(userLocality)
-        .then((res) => setDoctorsPositions(res.data.data))
-        .catch((error) => console.log(error));
-    }
-  }, [userLocality]);
-
+export const MapDisplay = ({
+  appointmentsList,
+  setAppointmentsList,
+  userPosition,
+  setUserPosition,
+  doctorsPosition,
+}) => {
   return (
     <MapContainer
-      center={[51.505, -0.09]}
+      center={
+        userPosition ? [userPosition.lat, userPosition.lng] : [51.505, -0.09]
+      }
       zoom={13}
-      scrollWheelZoom={false}
-      style={{ height: "100vh" }}
+      scrollWheelZoom={true}
+      style={{ height: "80vh" }}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -41,9 +27,9 @@ export const MapDisplay = () => {
         position={userPosition}
         setPosition={setUserPosition}
       />
-      {doctorsPositions.length > 0 &&
+      {doctorsPosition.length > 0 &&
         userPosition &&
-        doctorsPositions.map((doctorsPosition, index) => (
+        doctorsPosition.map((doctorsPosition, index) => (
           <Marker
             key={index}
             position={[doctorsPosition.latitude, doctorsPosition.longitude]}
